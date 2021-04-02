@@ -2,7 +2,7 @@
 
 WORK IN PROGRESS
 
-Port of [nsfjw](https://github.com/infinitered/nsfwjs) to ruby.
+Port of [nsfwjs](https://github.com/infinitered/nsfwjs) to ruby.
 
 This RubyGem utilizes [nsfw_model](https://github.com/GantMan/nsfw_model) tensorlite converted to onnx format for loading in the runtime.
 

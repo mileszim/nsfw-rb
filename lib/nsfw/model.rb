@@ -2,7 +2,8 @@ require "onnxruntime"
 
 module NSFW
   class Model
-    MODEL_PATH       = "vendor/onnx_models/nsfw.onnx"
+    ROOT_PATH        = Pathname.new(__dir__).parent.parent
+    MODEL_PATH       = "#{ROOT_PATH}/vendor/onnx_models/nsfw.onnx"
     CATEGORIES       = ['drawings', 'hentai', 'neutral', 'porn', 'sexy']
     SAFETY_THRESHOLD = 0.85
 

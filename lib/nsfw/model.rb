@@ -43,7 +43,7 @@ module NSFW
     end
 
     def format_prediction(prediction)
-      results = prediction.fetch("Identity").first
+      results = prediction.fetch("prediction").first
       CATEGORIES.zip(results).sort{|a,b| b.last - a.last }.to_h
     end
   end

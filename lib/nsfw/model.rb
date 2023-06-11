@@ -2,7 +2,8 @@ require "onnxruntime"
 
 module NSFW
   class Model
-    MODEL_PATH       = "vendor/onnx_models/nsfw.onnx"
+    root_path        = Pathname.new(__dir__).parent.parent
+    MODEL_PATH       = "#{root_path}/vendor/onnx_models/nsfw.onnx"
     CATEGORIES       = ['drawings', 'hentai', 'neutral', 'porn', 'sexy']
     SAFETY_THRESHOLD = 0.85
 
@@ -42,7 +43,7 @@ module NSFW
     end
 
     def format_prediction(prediction)
-      results = prediction.fetch("Identity").first
+      results = prediction.fetch("prediction").first
       CATEGORIES.zip(results).sort{|a,b| b.last - a.last }.to_h
     end
   end
